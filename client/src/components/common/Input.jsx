@@ -1,6 +1,6 @@
 import React from "react";
 
-function Input({name, state, setState, label=false}) {
+function Input({name, state, setState, label=false}) { //props passed from parent
 
   return (
     <div className="flex flex-col gap-1">
