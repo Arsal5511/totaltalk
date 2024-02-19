@@ -5,9 +5,13 @@ import ContextMenu from "./ContextMenu";
 import PhotoPicker from "./PhotoPicker";
 import PhotoLibrary from "./PhotoLibrary";
 
-function Avatar({ type, image, setImage }) {
-  const [hover, setHover] = useState(false);
-  const [isContextMenuVisible, setisContextMenuVisible] = useState(false);
+
+function Avatar({ type, image, setImage }) { //props passed from parent
+
+
+  // useStates
+  const [hover, setHover] = useState(false); //when hover over avatar set state to true
+  const [isContextMenuVisible, setisContextMenuVisible] = useState(false); 
   const [constextMenuCordinates, setisContextMenuCordinates] = useState({
     x: 0,
     y: 0,
@@ -38,6 +42,7 @@ function Avatar({ type, image, setImage }) {
   }, [grabPhoto])
   
 
+  //on clicking avatar an opion list will be shown
   const contextMenuOptions = [
     { 
       name: "Take Photo",
@@ -67,6 +72,7 @@ function Avatar({ type, image, setImage }) {
 
     
 
+  // function to upload photo from gallery or device
   const photoPickerChange = async (e) => {
 
     const file = e.target.files[0];
@@ -96,16 +102,23 @@ function Avatar({ type, image, setImage }) {
   return (
     <>
       <div className="flex items-center justify-center ">
+
+        {/* for small image */}
         {type === "sm" && (
           <div className="relative h-10 w-10">
             <Image src={image} alt="avatar" className="rounded-full" fill />
           </div>
         )}
+
+        {/* for large image */}
         {type === "lg" && (
           <div className="relative h-14 w-14">
             <Image src={image} alt="avatar" className="rounded-full" fill />
           </div>
         )}
+
+
+        {/* for extra large image */}
         {type === "xl" && (
           <div
             className="relative cursor-pointer z-0"
@@ -119,6 +132,7 @@ function Avatar({ type, image, setImage }) {
               onClick={(e) => showContextMenu(e)}
               id="context-opener"
             >
+              {/* camera icon  */}
               <FaCamera
                 onClick={(e) => showContextMenu(e)}
                 className="text-2xl"
@@ -132,11 +146,15 @@ function Avatar({ type, image, setImage }) {
                 Photo
               </span>
             </div>
+
             <div className="flex items-center justify-center h-60 w-60">
               <Image src={image} alt="avatar" className="rounded-full" fill />
             </div>
+
           </div>
         )}
+        
+        {/* option list or context menu will be shown */}
         {isContextMenuVisible && (
           <ContextMenu
             option={contextMenuOptions}
@@ -145,6 +163,8 @@ function Avatar({ type, image, setImage }) {
             ContextMenu={isContextMenuVisible}
           />
         )}
+
+        {/* Photo Library will be shown */}
         {showPhotoLibrary && (
           <PhotoLibrary
           setImage={setImage}
@@ -152,6 +172,8 @@ function Avatar({ type, image, setImage }) {
           />
 
         )}
+
+        {/* Photo Picker */}
         {grabPhoto && <PhotoPicker onChange={photoPickerChange} />}
       </div>
     </>
