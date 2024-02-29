@@ -4,6 +4,7 @@ import { FaCamera } from "react-icons/fa";
 import ContextMenu from "./ContextMenu";
 import PhotoPicker from "./PhotoPicker";
 import PhotoLibrary from "./PhotoLibrary";
+import CapturePhoto from "./CapturePhoto";
 
 
 function Avatar({ type, image, setImage }) { //props passed from parent
@@ -18,6 +19,7 @@ function Avatar({ type, image, setImage }) { //props passed from parent
   });
   const [grabPhoto, setGrabPhoto] = useState(false)
   const [showPhotoLibrary, setshowPhotoLibrary] = useState(false)
+  const [capturePhoto, setCapturePhoto] = useState(false)
 
   const showContextMenu = (e) => {
     e.preventDefault();
@@ -46,7 +48,9 @@ function Avatar({ type, image, setImage }) { //props passed from parent
   const contextMenuOptions = [
     { 
       name: "Take Photo",
-      callback: () => {}
+      callback: () => {
+        setCapturePhoto(true)
+      }
     },
 
     { 
@@ -175,6 +179,11 @@ function Avatar({ type, image, setImage }) { //props passed from parent
 
         {/* Photo Picker */}
         {grabPhoto && <PhotoPicker onChange={photoPickerChange} />}
+
+
+
+        {/* Photo Picker */}
+        {capturePhoto && <CapturePhoto hide={setCapturePhoto}  setImage={setImage} />}
       </div>
     </>
   );
