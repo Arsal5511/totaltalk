@@ -46,7 +46,7 @@ function CapturePhoto({hide, setImage}) {
               <video src="" id="video" width={300} height={300} autoPlay ref={videoRef}></video>
             </div>
             <button
-            className="h-16 w-16 bg-white rounded-full cursor-pointer border-8 border-teal-light p-2 mb-10 "
+            className="h-12 w-12 bg-white rounded-full cursor-pointer border-8 border-teal-light p-2 mb-10 "
             onClick={capturePhoto}
             >
 
