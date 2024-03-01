@@ -14,6 +14,7 @@ function CapturePhoto({hide, setImage}) {
     })
     videoRef.current.srcObject = stream;
    }
+   
    startCamera();
 
    return () => {
