@@ -10,9 +10,33 @@ function onboarding() {
   const [about, setAbout] = useState(userInfo?.name ||"")
   //default avatar picture
   const [image, setImage] = useState("/default_avatar.png")
+
+
+  const onboardUserHandler = async () => {
+    if(validateDetails){
+      const email = userInfo.email;
+      try{
+
+      }catch(err){
+        console.log(err)
+      }
+
+    }
+  }
+
+  const validateDetails = () =>{
+    if(name.length<3){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+
+
   return (
 
-  <div className="bg-panel-header-background h-screen w-screen text-white flex flex-col items-center justify-center ">
+  <div className="bg-panel-header-background h-screen scrollbar-hide w-screen text-white flex flex-col items-center justify-center ">
 
     <div className="flex items-center justify-center gap-2 ">
       <Image src='/whatsapp.gif' alt="whatsapp" height={300} width={300} priority />
@@ -28,6 +52,16 @@ function onboarding() {
       <div className="flex flex-col items-center justify-center mt-5 gap-6  ">
         <Input name="Display Name" state={name} setState={setName} label />
         <Input name="About" state={about} setState={setAbout} label />
+
+        {/* create profile button */}
+        <div className="flex items-center justify-center ">
+          <button
+          className="flex items-center justify-center gap-7 bg-search-input-container-background p-5 rounded-lg "
+          onClick={onboardUserHandler}
+          >
+            Create Profile
+          </button>
+        </div>
       </div>
 
     {/* Avatar.jsx component for user picture */}
