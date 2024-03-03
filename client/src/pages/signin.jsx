@@ -15,7 +15,6 @@ function signin() {
   const [{userInfo, newUser}, dispatch] = useStateProvider();
 
   useEffect( () => {
-    // console.log({userInfo,newUser})
     if(userInfo?.id && !newUser){
       router.push("/");
     }
@@ -32,7 +31,6 @@ function signin() {
       if (email) {
         const { data } = await axios.post(CHECK_USER_ROUTE, { email });
 
-        // console.log({ data });
 
         if (!data.status) {
 
@@ -46,7 +44,7 @@ function signin() {
             
           });
 
-          // console.log("this is user info console", {userInfo: { name, email, profileImage, status: "" }});
+          
 
           router.push("/onboarding");
         }else {
@@ -76,6 +74,8 @@ function signin() {
   };
   return (
     <div className="flex justify-center items-center bg-panel-header-background flex-col w-screen h-screen gap-6">
+
+      {/* Whatsapp Giff  */}
       <div className="flex items-center justify-center">
         <Image
           src="/whatsapp.gif"
@@ -86,6 +86,8 @@ function signin() {
         />
         <span className="text-7xl text-white">WhatsApp</span>
       </div>
+
+      {/* button to login with google  */}
       <button
         className="flex items-center justify-center gap-7 bg-search-input-container-background p-5 rounded-lg "
         onClick={handleLogin}
