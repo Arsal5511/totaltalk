@@ -8,14 +8,20 @@ import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 
 function onboarding() {
+
   const router = useRouter();
   const [{userInfo, newUser}, dispatch] = useStateProvider()
+
+  // use state for name input
   const [name, setName] = useState(userInfo?.name ||"")
+
+  // use State for about input
   const [about, setAbout] = useState(userInfo?.name ||"")
+
   //default avatar picture
   const [image, setImage] = useState("/default_avatar.png")
 
-
+// useEffect will redirect to signin page if user is new and not signed in
   useEffect(() => {
     if(!newUser && !userInfo?.email) {
       router.push("/signin")
@@ -33,7 +39,6 @@ function onboarding() {
       const email = userInfo.email;
       try{
         const {data} = await axios.post(ONBOARD_USER_ROUTE, {email, name, about, image})
-        console.log(data)
         if(data.status) {
           dispatch({ type: reducerCases.SET_NEW_USER, newUser: false });
           
