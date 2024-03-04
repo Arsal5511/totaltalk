@@ -49,7 +49,7 @@ function signin() {
           router.push("/onboarding");
         }else {
 
-          const {id, name, email, profilePicture:profileImage, status} = data;
+          const {id, name, email, profilePicture:profileImage, status} = data.data;
           dispatch({
             
             type: reducerCases.SET_USER_INFO,
