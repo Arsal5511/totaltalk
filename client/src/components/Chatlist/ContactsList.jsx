@@ -2,7 +2,6 @@ import { useStateProvider } from "@/context/StateContext";
 import { reducerCases } from "@/context/constants";
 import { GET_ALL_CONTACTS } from "@/utils/ApiRoutes";
 import axios from "axios";
-import { stringify } from "postcss";
 import React, { useEffect, useState } from "react";
 import { BiArrowBack, BiSearchAlt2 } from "react-icons/bi";
 
@@ -11,32 +10,25 @@ function ContactsList() {
 
   const [allContacts, setAllContacts] = useState([]);
 
-  // useEffect(() => {
-  //   const getContacts = async () => {
-  //     try {
-  //       const {
-  //         data: { users },
-  //       } = await axios.get(GET_ALL_CONTACTS);
-  //       console.log(users)
-  //       setAllContacts(users);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-  //   getContacts();
-  // }, []);
 
   useEffect(() => {
     const getContacts = async () => {
       try {
-        const { data: { users } } = await axios.get(GET_ALL_CONTACTS);
+
+        const  {data:{users}}  = await axios.get(GET_ALL_CONTACTS);
+
         console.log(users)
         setAllContacts(users);
+
       } catch (err) {
+
         console.log(err);
+
       }
     };
+
     getContacts();
+
   }, []);
 
   return (

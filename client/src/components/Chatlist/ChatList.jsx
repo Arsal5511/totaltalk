@@ -12,7 +12,6 @@ function ChatList() {
   useEffect(() => {
     if(contactsPage){
       setPageType("all-contacts")
-      console.log("all contacts here")
     }else{
       setPageType("default")
     }
