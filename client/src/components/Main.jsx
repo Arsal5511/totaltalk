@@ -8,6 +8,7 @@ import { auth } from "@/utils/FirebaseConfig";
 import axios from "axios";
 import { CHECK_USER_ROUTE } from "@/utils/ApiRoutes";
 import { reducerCases } from "@/context/constants";
+import Chat from "./Chat/Chat";
 
 function Main() {
 
@@ -49,7 +50,8 @@ function Main() {
   return( 
   <div className="grid grid-cols-main h-screen w-screen max-h-screen max-w-full overflow-hidden " >
     <ChatList />
-    <Empty />
+    {/* <Empty /> */}
+    <Chat />
 
   </div>
   )}
