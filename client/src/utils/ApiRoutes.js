@@ -1,4 +1,4 @@
-
+// This page is to create API links for maping and data fetching in client side
 
 export const HOST = "http://localhost:3007";
 
