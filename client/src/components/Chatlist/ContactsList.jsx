@@ -33,6 +33,8 @@ function ContactsList() {
 
   return (
     <div className="h-full flex flex-col">
+
+      {/* icon of arrowback to go to chat list page from contacts  */}
       <div className="h-24 flex items-end px-3 py-4 ">
         <div className="flex items-center gap-12 text-white">
           <BiArrowBack
@@ -86,9 +88,6 @@ function ContactsList() {
               )
           })
         }
-        
-
-
       </div>
     </div>
   );
