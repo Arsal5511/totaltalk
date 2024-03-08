@@ -37,7 +37,7 @@ function PhotoLibrary({setImage, hidePhotoLibrary}) {
              }}
           >
             <div className=" h-24 w-24 relative cursor-pointer ">
-            <Image src={image} alt="avatars" fill />
+            <Image src={image} alt="avatars" fill priority />
             </div>
           </div>
           
