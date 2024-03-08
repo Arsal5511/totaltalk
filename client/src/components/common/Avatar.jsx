@@ -96,7 +96,6 @@ function Avatar({ type, image, setImage }) { //props passed from parent
     reader.readAsDataURL(file)
     
     setTimeout(() => {
-      console.log(data.src)
       setImage(data.src)
       
     }, 1000)
