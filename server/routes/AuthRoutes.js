@@ -9,5 +9,7 @@ router.post("/onboard-user", onBoardUser)
 // check for all users who are signed in
 router.get("/get-contacts", getAllUsers)
 
+console.log(getAllUsers)
+
 
 export default router
