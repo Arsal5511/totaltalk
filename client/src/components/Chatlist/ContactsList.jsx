@@ -1,7 +1,7 @@
 import { useStateProvider } from "@/context/StateContext";
 import { reducerCases } from "@/context/constants";
 import { GET_ALL_CONTACTS } from "@/utils/ApiRoutes";
-import axios from "axios";
+import axios, { Axios } from "axios";
 import React, { useEffect, useState } from "react";
 import { BiArrowBack, BiSearchAlt2 } from "react-icons/bi";
 
@@ -12,12 +12,14 @@ function ContactsList() {
 
 
   useEffect(() => {
+    alert('in effect')
     const getContacts = async () => {
       try {
 
         const  {data:{users}}  = await axios.get(GET_ALL_CONTACTS);
 
-        // console.log(users)
+        alert('in try catch')
+        console.log(users)
         setAllContacts(users);
 
       } catch (err) {
