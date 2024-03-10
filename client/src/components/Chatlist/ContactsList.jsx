@@ -19,7 +19,7 @@ function ContactsList() {
         const  {data:{users}}  = await axios.get(GET_ALL_CONTACTS);
 
         alert('in try catch')
-        console.log(GET_ALL_CONTACTS)
+        console.log(users)
         setAllContacts(users);
 
       } catch (err) {
