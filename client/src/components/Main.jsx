@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ChatList from "./Chatlist/ChatList";
 import Empty from "./Empty";
 import { onAuthStateChanged } from "firebase/auth";
 import { useRouter } from "next/router";
@@ -9,6 +8,7 @@ import axios from "axios";
 import { CHECK_USER_ROUTE } from "@/utils/ApiRoutes";
 import { reducerCases } from "@/context/constants";
 import Chat from "./Chat/Chat";
+import ChatList from "./Chatlist/ChatList";
 
 function Main() {
 

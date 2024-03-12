@@ -9,7 +9,7 @@ function ChatList() {
   const [{ contactsPage }] = useStateProvider();
   const [pageType, setPageType] = useState("default");
 
-  // rendring of contacts on chat list
+  // rendering of contacts on chat list
   useEffect(() => {
     if (contactsPage) {
       setPageType("all-contacts");
