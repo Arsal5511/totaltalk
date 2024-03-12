@@ -79,7 +79,7 @@ function ContactsList() {
         </div>
 
               {/* maping of contacts in chatlist */}
-        {allContacts && Object.entries(allContacts).map(([initialLetter, userList ]) => {
+        {Object.entries(allContacts).map(([initialLetter, userList ]) => {
             return (
               <div key={Date.now() + initialLetter}>
                 <div className="text-teal-light pl-10 pr-5">
