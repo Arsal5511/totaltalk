@@ -17,7 +17,7 @@ model User{
   profilePicture String @default("")
   about String @default("")
   sentMesseges Messages[] @relation("sentMessages")
-  recievedMessages Messages[] @relation("recievedMessages")
+  receivedMessages Messages[] @relation("receivedMessages")
 }
 
 model Messages {
@@ -26,11 +26,14 @@ model Messages {
   sender User @relation("sentMessages", fields: [senderId], references: [id])
   senderId Int
 
-  reciever User @relation("recievedMessages", fields: [recieverId], references: [id])
-  recieverId Int
+  receiver User @relation("receivedMessages", fields: [receiverId], references: [id])
+  receiverId Int
 
   type String @default("text")
+
   message String
+
   messageStatus String @default("sent")
+
   createdAt DateTime @default(now())
 }
