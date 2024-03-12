@@ -62,18 +62,18 @@ export const getAllUsers =async (req, res, next) => {
             }
 
         })
-        const userGroupByInitialLetter = {};
+        const usersGroupByInitialLetter = {};
 
         users.forEach((user) => {
             const initialLetter = user.name.charAt(0).toUpperCase();
-            if(!userGroupByInitialLetter[initialLetter]){
-                userGroupByInitialLetter[initialLetter] = [];
+            if(!usersGroupByInitialLetter[initialLetter]){
+                usersGroupByInitialLetter[initialLetter] = [];
             }
-            userGroupByInitialLetter[initialLetter].push(user)
+            usersGroupByInitialLetter[initialLetter].push(user)
             
         });
 
-        return res.status(200).send(userGroupByInitialLetter)
+        return res.status(200).send({users: usersGroupByInitialLetter})
     }catch(err){
         next(err)
 

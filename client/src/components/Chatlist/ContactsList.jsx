@@ -83,7 +83,7 @@ function ContactsList() {
             return (
               <div key={Date.now() + initialLetter}>
                 <div className="text-teal-light pl-10 pr-5">
-                  {initialLetter}
+                  {initialLetter.userList}
 
                 </div>
               </div>
