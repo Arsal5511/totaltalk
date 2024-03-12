@@ -12,14 +12,10 @@ function ContactsList() {
 
 
   useEffect(() => {
-    alert('in effect')
     const getContacts = async () => {
       try {
 
         const  {data:{users}}  = await axios.get(GET_ALL_CONTACTS);
-
-        alert('in try catch')
-        console.log(users)
         setAllContacts(users);
 
       } catch (err) {
@@ -82,7 +78,7 @@ function ContactsList() {
         {Object.entries(allContacts).map(([initialLetter, userList ]) => {
             return (
               <div key={Date.now() + initialLetter}>
-                <div className="text-teal-light pl-10 pr-5">
+                <div className="text-teal-light pl-10 py-5">
                   {initialLetter}
 
                 </div>
