@@ -20,6 +20,5 @@ export const addMessage = async (req, res, next) => {
     return res.status(400).send("From, to and Message is required");
   } catch (err) {
     next(err);
-    console.log(err);
   }
 };

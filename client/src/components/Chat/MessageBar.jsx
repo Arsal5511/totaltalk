@@ -11,18 +11,17 @@ function MessageBar() {
   const [{ userInfo, currentChatUser }, dispatch] = useStateProvider();
   const [message, setMessage] = useState("");
 
+  console.log(message);
   const sendMessage = async () => {
-    try{
-      const {data} = await axios.post(ADD_MESSAGE_ROUTE, {
+    try {
+      const { data } = await axios.post(ADD_MESSAGE_ROUTE, {
         to: currentChatUser?.id,
         from: userInfo?.id,
         message,
-      })
+      });
       setMessage("");
-     
-
-    }catch(err){
-      console.log(err)
+    } catch (err) {
+      console.log("this is error error error", err);
     }
   };
 

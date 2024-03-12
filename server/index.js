@@ -17,4 +17,5 @@ const server = app.listen(process.env.PORT, () => {
     console.log(`Server started on port ${process.env.PORT}`)
 })
 
+// global map for maintaining sockets and users 
 global.onlineUsers = new Map();
