@@ -16,7 +16,7 @@ model User{
   name String
   profilePicture String @default("")
   about String @default("")
-  sentMesseges Messages[] @relation("sentMessages")
+  sentMessages Messages[] @relation("sentMessages")
   receivedMessages Messages[] @relation("receivedMessages")
 }
 
