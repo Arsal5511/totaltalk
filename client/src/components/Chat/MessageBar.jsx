@@ -11,7 +11,6 @@ function MessageBar() {
   const [{ userInfo, currentChatUser }, dispatch] = useStateProvider();
   const [message, setMessage] = useState("");
 
-  console.log(message);
   const sendMessage = async () => {
     try {
       const { data } = await axios.post(ADD_MESSAGE_ROUTE, {

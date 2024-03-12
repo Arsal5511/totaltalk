@@ -16,3 +16,5 @@ export const GET_ALL_CONTACTS = `${AUTH_ROUTE}/get-contacts`
 
 // API for messages 
 export const ADD_MESSAGE_ROUTE = `${MESSAGES_ROUTE}/add-message`
+
+export const GET_MESSAGES_ROUTE = `${MESSAGES_ROUTE}/get-messages`
