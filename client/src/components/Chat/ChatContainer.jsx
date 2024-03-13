@@ -9,11 +9,11 @@ function ChatContainer() {
   return (
     <div className="h-[80vh] w-full relative flex-grow overflow-auto custom-scrollbar">
       {/* background image  */}
-      <div className=" bg-chat-background bg-fixed h-full w-full opacity-5 fixed left-0 top-0 z-0"></div>
+      <div className=" bg-chat-background bg-fixed h-full w-full opacity-5  absolute left-0 top-0 z-0"></div>
 
       <div className="mx-10 my-6 relative bottom-0 z-40 left-0 ">
         <div className="flex w-full">
-          <div className="flex flex-col justify-end w-full gap-1 overflow-auto">
+          <div className="flex flex-col justify-end w-full gap-1 overflow-auto ">
             {messages.map((message, index) => (
               <div
                 key={message.id}
@@ -38,7 +38,7 @@ function ChatContainer() {
                       </span>
                       <span>
                         {
-                          message.senderId === userInfo.id &&   <messageStatus messageStatus={message.messageStatus} />
+                          message.senderId === userInfo.id &&   <MessageStatus messageStatus={message.messageStatus} />
                         }
                       </span>
                     </div>

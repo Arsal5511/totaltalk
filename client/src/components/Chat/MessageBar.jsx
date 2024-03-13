@@ -49,7 +49,7 @@ function MessageBar() {
         <div className="flex w-10 items-center justify-center ">
           <button>
             <MdSend
-              className="text-panel-header-icon cursor-pointer text-xl z-10"
+              className="text-panel-header-icon cursor-pointer text-xl "
               title="Send Message"
               onClick={sendMessage}
             />
