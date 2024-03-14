@@ -41,6 +41,7 @@ function ChatContainer() {
                     <div className="flex gap-1 items-end">
                       <span className="text-bubble-meta tex-[11px] pt-1 min-w-fit">
                         {calculateTime(message.createdAt)}
+                      
                       </span>
                       <span>
                         {
