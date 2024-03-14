@@ -9,7 +9,10 @@ function ChatContainer() {
   return (
     <div className="h-[80vh] w-full relative flex-grow overflow-auto custom-scrollbar">
       {/* background image  */}
-      <div className=" bg-chat-background bg-fixed h-full w-full opacity-5  absolute left-0 top-0 z-0"></div>
+      <div  className="  absolute left-0 top-0 ">
+      <div className=" bg-chat-background bg-fixed h-full w-full  opacity-5 fixed z-0"></div>
+
+      </div>
 
 
 
