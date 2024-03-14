@@ -11,6 +11,9 @@ function ChatContainer() {
       {/* background image  */}
       <div className=" bg-chat-background bg-fixed h-full w-full opacity-5  absolute left-0 top-0 z-0"></div>
 
+
+
+      {/* center area and messages design  */}
       <div className="mx-10 my-6 relative bottom-0 z-40 left-0 ">
         <div className="flex w-full">
           <div className="flex flex-col justify-end w-full gap-1 overflow-auto ">
