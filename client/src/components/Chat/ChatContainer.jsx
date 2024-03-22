@@ -9,12 +9,9 @@ function ChatContainer() {
   return (
     <div className="h-[80vh] w-full relative flex-grow overflow-auto custom-scrollbar">
       {/* background image  */}
-      <div  className="  absolute left-0 top-0 ">
-      <div className=" bg-chat-background bg-fixed h-full w-full  opacity-5 fixed z-0"></div>
-
+      <div className="  absolute left-0 top-0 ">
+        <div className=" bg-chat-background bg-fixed h-full w-full  opacity-5 fixed z-0"></div>
       </div>
-
-
 
       {/* center area and messages design  */}
       <div className="mx-10 my-6 relative bottom-0 z-40 left-0 ">
@@ -41,12 +38,13 @@ function ChatContainer() {
                     <div className="flex gap-1 items-end">
                       <span className="text-bubble-meta tex-[11px] pt-1 min-w-fit">
                         {calculateTime(message.createdAt)}
-                      
                       </span>
                       <span>
-                        {
-                          message.senderId === userInfo.id &&   <MessageStatus messageStatus={message.messageStatus} />
-                        }
+                        {message.senderId === userInfo.id && (
+                          <MessageStatus
+                            messageStatus={message.messageStatus}
+                          />
+                        )}
                       </span>
                     </div>
                   </div>
